@@ -81,7 +81,7 @@
 // pricePerItem = 3500;
 
 
-// третя задача
+// // третя задача
 // Типы примитивов (числа, строки, були)
 // В JavaScript переменная не ассоциируется с каким-либо типом данных, тип есть у её значения. То есть переменная может хранить значения разных типов.
 
@@ -951,19 +951,19 @@
 // Вызов функции checkForSpam("Get rid of sPaM emails. Our book in on sale!") возвращает true
 // Вызов функции checkForSpam("[SPAM] How to earn fast money?") возвращает true
 
-function checkForSpam(message) {
-  let result;
-  // Change code below this line
+// function checkForSpam(message) {
+//   let result;
+//   // Change code below this line
 
-  // Change code above this line
-  return result;
-}
+//   // Change code above this line
+//   return result;
+// }
 
-// розвязання
-function checkForSpam(message) {
-  let result;
-  // Change code below this line
-result = message.toLowerCase().includes(`spam`) || message.toLowerCase().includes(`sale`) ? true: false;
-  // Change code above this line
-  return result;
-}
+// // розвязання
+// function checkForSpam(message) {
+//   let result;
+//   // Change code below this line
+// result = message.toLowerCase().includes(`spam`) || message.toLowerCase().includes(`sale`) ? true: false;
+//   // Change code above this line
+//   return result;
+// }
