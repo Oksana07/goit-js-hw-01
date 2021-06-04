@@ -477,26 +477,26 @@
 // Вызов getDiscount(50000) возвращает 0.1
 
 // Розвязок
-// function getDiscount(totalSpent) {
-//   const BASE_DISCOUNT = 0;
-//   const BRONZE_DISCOUNT = 0.02;
-//   const SILVER_DISCOUNT = 0.05;
-//   const GOLD_DISCOUNT = 0.1;
-//   let discount;
-// if (totalSpent >= 50000) {
-//   discount = GOLD_DISCOUNT;
-// }
-//   else if (totalSpent >= 20000 && 50000) {
-//   discount = SILVER_DISCOUNT;
-// } 
-//    else if (totalSpent >= 5000 && 20000) {
-//   discount = BRONZE_DISCOUNT;
-// } 
-//      else if (totalSpent < 5000) {
-//   discount = BASE_DISCOUNT;
-// } 
-//   return discount;
-// }
+function getDiscount(totalSpent) {
+  const BASE_DISCOUNT = 0;
+  const BRONZE_DISCOUNT = 0.02;
+  const SILVER_DISCOUNT = 0.05;
+  const GOLD_DISCOUNT = 0.1;
+  let discount;
+if (totalSpent >= 50000) {
+  discount = GOLD_DISCOUNT;
+}
+  else if (totalSpent >= 20000 && 50000) {
+  discount = SILVER_DISCOUNT;
+} 
+   else if (totalSpent >= 5000 && 20000) {
+  discount = BRONZE_DISCOUNT;
+} 
+     else if (totalSpent < 5000) {
+  discount = BASE_DISCOUNT;
+} 
+  return discount;
+}
 
 // 25 задача
 // Задание
@@ -511,11 +511,11 @@
 // Вызов checkStorage(200, 150) возвращает "The order is accepted, our manager will contact you"
 // Вызов checkStorage(150, 180) возвращает "Not enough goods in stock!"
 // 
-// function checkStorage(available, ordered) {
-//   let message;
-//  message = ordered > available ? "Not enough goods in stock!": "The order is accepted, our manager will contact you";
-//   return message;
-// }
+function checkStorage(available, ordered) {
+  let message;
+ message = ordered > available ? "Not enough goods in stock!": "The order is accepted, our manager will contact you";
+  return message;
+}
 
 // 26 задача
 // Задание

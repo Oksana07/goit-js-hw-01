@@ -1,4 +1,4 @@
-// // Используя конструкцию if..else, напишите код, который будет спрашивать: «Какое количество месяцев в году». Если пользователь вводит 12 , 
+// Используя конструкцию if..else, напишите код, который будет спрашивать: «Какое количество месяцев в году». Если пользователь вводит 12 , 
 // то показать: «Верно!», в противном случае – отобразить: «Не знаете ? 12!»
 
 // 1) Попросить у юзера число
@@ -174,12 +174,12 @@
 // Цикл должен спрашивать число пока посетитель не введёт число, большее 100, либо не нажмёт кнопку Отмена в промпт.
 
 // let number = 0;
-let number = 0;
+// let number = 0;
 
-while (number !== null && number <= 100) {
-    number = prompt('Enter number');
-    console.log("number", number)
-}
+// while (number !== null && number <= 100) {
+//     number = prompt('Enter number');
+//     console.log("number", number)
+// }
 
 // do {
 //     number = prompt('Enter number');
@@ -189,4 +189,17 @@ while (number !== null && number <= 100) {
 // while (number !== null && number <= 100) {
 //     number = prompt('Enter number');
 //  }
+
+
+const fruits = ["apple", "plum", "pear", "orange"];
+const firstElement = "apple";
+const secondElement = "plum";
+const lastElement = "orange";
+console.table(fruits)
+fruits[1] = `qweqwe`;
+console.log(fruits);
+
+console.log(fruits[2]);
+
+const lastIndex = fruits.length - 1;
 
