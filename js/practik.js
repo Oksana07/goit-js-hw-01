@@ -371,18 +371,18 @@
 // }
 //  console.log(total);  
 
-//задача
-const carts = [
-    `Карточка-1`,
-    `Карточка-2`,
-    `Карточка-3`,
-    `Карточка-4`,
-    `Карточка-5`,
-]
-console.table(carts);
+// //задача
+// const carts = [
+//     `Карточка-1`,
+//     `Карточка-2`,
+//     `Карточка-3`,
+//     `Карточка-4`,
+//     `Карточка-5`,
+// ]
+// console.table(carts);
 
-const cartToRemuve = `Карточка-5`;
-const index = carts.indexOf(cardToRemuve);
-carts.slice(index, 1);
-console.log(index);
+// const cartToRemuve = `Карточка-5`;
+// const index = carts.indexOf(cardToRemuve);
+// carts.slice(index, 1);
+// console.log(index);
 
