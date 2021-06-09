@@ -191,15 +191,198 @@
 //  }
 
 
-const fruits = ["apple", "plum", "pear", "orange"];
-const firstElement = "apple";
-const secondElement = "plum";
-const lastElement = "orange";
-console.table(fruits)
-fruits[1] = `qweqwe`;
-console.log(fruits);
+// const fruits = ["apple", "plum", "pear", "orange"];
+// const firstElement = "apple";
+// const secondElement = "plum";
+// const lastElement = "orange";
+// console.table(fruits)
+// fruits[1] = `qweqwe`;
+// console.log(fruits);
 
-console.log(fruits[2]);
+// console.log(fruits[2]);
 
-const lastIndex = fruits.length - 1;
+// const lastIndex = fruits.length - 1;
+
+//1) Напиши функцию calculateAverage() которая принимает произвольное кол-во аргументов и возвращает их
+// среднее значение.Все аругменты будут только числами.
+
+// 1) Нужно посчитать суму всех аргументов
+//2) Посчитать средьнее значение
+//3) Вывести результат на экран
+
+// function calculateAverage() {
+//   console.log("arguments", arguments);
+// }
+// console.log(calculateAverage(1, 2, 3, 4));
+
+//   const numbers = Array.from(arguments);
+//   let total = 0;
+//   for (let number of numbers) {
+//     total += number;
+//   }
+//  }
+//   const length = numbers.length;
+//   const average = total / length;
+//   return average;
+// 
+
+
+
+// TASK 1
+// Напишите функцию pow(x,n), которая возвращает x в степени n.
+// Иначе говоря, умножает x на себя n раз и возвращает результат.
+
+// const pow = function (x, n) {
+//   return Math.pow(x, n);
+// };
+// console.log(pow(2, 4));
+// 
+
+
+// TASK 2
+// напиши функцию которая будет суммировать 
+// соседние числа и пушить их в новый массив
+// const someArr = [22, 11, 34, 5, 12, 13, 14, 15]; [33, 39, 27, 29]
+
+// const addNumbers = function (numbers) {
+//   const newNumbers = [];
+//   for (let i = 0; i < numbers.length; i += 2) {
+//     numbers[i] += numbers[i + 1];
+//     newNumbers.push(numbers[i]);
+//   }
+//   return newNumbers;
+// };
+
+// console.log(addNumbers([22, 11, 34, 5, 12, 13, 14, 15]));
+
+// TASK 3
+// Напишите решение, которое вычисляет сумму
+// квадратных корней для всех чисел у которых квадратный корень будет целым числом.
+// const arr = [4, 3, 5, 16, 16, 33, 4, 9]
+
+// const arr = [4, 3, 5, 16, 16, 33, 4, 9];
+
+// const addNewArr = function (array) {
+//   const newArray = [];
+//   for (let elem of array) {
+//     if (elem % Math.sqrt(elem) === 0) {
+//       newArray.push(Math.sqrt(elem));
+//     }
+//   }
+//   return newArray;
+// }
+// console.log(addNewArr(arr));
+
+
+// TASK 4
+
+// // даны 2 массива
+// const nums = [1, "b", 3, "d", 5];
+// const strs = ["a", 2, "c", 4, "e"];
+
+// // Напишите функцию которая будет принимать 2 массива в качестве аргументов
+// // и вернет новый массив ['1a', '2b', '3c', '4d', '5e']
+
+
+// const array = (array1, array2) => {
+//   const newArray = [];
+
+//   for (let i = 0; i < array1.length; i += 1) {
+//     typeof array1[i] === "number"
+//       ? newArray.push(array1[i] + array2[i])
+//       : newArray.push(array2[i] + array1[i]);
+//   }
+
+//   return newArray;
+// };
+// console.log(array(nums, strs));
+
+// TASK 5
+// привести массив к одному уровню
+
+// const tryThis = [
+//     [23, 11, ["hello", "world", "Vasya"]],
+//     "some str",
+//     [777, "word", ["Привет", ["как сюда добраться"]]],
+//   ];
+
+//   const newTryThis = tryThis.flat(Infinity);
+
+//   console.log(newTryThis);
+
+
+// Репета модуль 2, урок 3 
+// вибрати найменший 
+// const numbers = [51, 18, 13, 24, 7, 65];
+// let bigllestNumber = numbers[0];
+// for (const number of numbers) {
+//     if (number > bigllestNumber) {
+//         bigllestNumber = number;
+//     }
+// }
+// console.log(`bigllestNumber:`, bigllestNumber);
+// вибрати найбільший
+// const numbers = [51, 18, 13, 24, 7, 65];
+// let smallestNumber = numbers[0];
+// for (const number of numbers) {
+//     if (number < smallestNumber) {
+//         smallestNumber = number;
+//     }
+// }
+// console.log(`smallestNumber:`, smallestNumber);
+
+// поставити кому і відріз(ати з останнього елементу кому
+// const fruits = ["apple", "plum", "pear", "orange"];
+
+// const string = fruits.join(`, `);
+// console.log(string);
+
+// до верхнього регістру маленькі букви до нижнього великі букви
+
+// const string = `javaScript`;
+// const letters = string.split(``);
+// let invertedString = ` `;
+// for (const letter of letters) {
+//     console.log(letter);
+
+//     invertedString +=
+//         letters === letter.toLowerCase()
+//             ? letter.toLowerCase()
+//             : letter.toLowerCase();
+// }
+// console.log(`invertedString:`, invertedString);
+
+// задача
+// const title = `Top 10 binefist of Recet frenwork`;
+// const normalizedTitle = title.toLowerCase();
+// const words = normalizedTitle.split(` `);
+// const slug = words.join(`-`);
+// const slug1 = title.toLowerCase().split(` `).join(`-`);
+// console.log(slug1);
+
+// задача
+// написати метод який рахує суму
+// const array1 = [1, 10, 15, 28];
+// const array2 = [20, 30, 40];
+// let total = 0;
+// const numbers = array1.concat(array1);
+// for (const number of numbers) {
+//     total += number;
+// }
+//  console.log(total);  
+
+//задача
+const carts = [
+    `Карточка-1`,
+    `Карточка-2`,
+    `Карточка-3`,
+    `Карточка-4`,
+    `Карточка-5`,
+]
+console.table(carts);
+
+const cartToRemuve = `Карточка-5`;
+const index = carts.indexOf(cardToRemuve);
+carts.slice(index, 1);
+console.log(index);
 
