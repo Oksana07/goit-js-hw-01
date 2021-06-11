@@ -179,21 +179,132 @@
 // }
 
 // 19
-const products = [
-  { name: 'Radar', price: 1300, quantity: 4 },
-  { name: 'Scanner', price: 2700, quantity: 3 },
-  { name: 'Droid', price: 400, quantity: 7 },
-  { name: 'Grip', price: 1200, quantity: 9 },
-];
+// const products = [
+//   { name: 'Radar', price: 1300, quantity: 4 },
+//   { name: 'Scanner', price: 2700, quantity: 3 },
+//   { name: 'Droid', price: 400, quantity: 7 },
+//   { name: 'Grip', price: 1200, quantity: 9 },
+// ];
 
-function getAllPropValues(propName) {
-  const arr = [];
- for (const product of products) {
-   if (product[propName]) {
-  arr.push(product[propName])
-    }
- }
-return arr;
-  // Change code above this line
-}
+// function getAllPropValues(propName) {
+//   const arr = [];
+//  for (const product of products) {
+//    if (product[propName]) {
+//   arr.push(product[propName])
+//     }
+//  }
+// return arr;
+//   // Change code above this line
+// }
 
+// 20
+// Задание
+// Напиши функцию calculateTotalPrice(productName) которая принимает один параметр productName - название товара.Функция должна вернуть общую стоимость(цена * количество) товара с таким именем из массива products.
+// // // розвязок
+// const products = [
+//   { name: 'Radar', price: 1300, quantity: 4 },
+//   { name: 'Scanner', price: 2700, quantity: 3 },
+//   { name: 'Droid', price: 400, quantity: 7 },
+//   { name: 'Grip', price: 1200, quantity: 9 },
+// ];
+
+// function calculateTotalPrice(productName) {
+//   // Пиши код ниже этой строки
+// let total = 0;
+//   for (const product of products){
+//     for (const key in product){
+//       if (product.name === productName)
+//         total = product.price * product.quantity
+//     }
+//   }
+// return total;
+//   // Пиши код выше этой строки
+// }
+
+// 21
+// деструкруризація обєкта
+// const highTemperatures = {
+//   yesterday: 28,
+//   today: 26,
+//   tomorrow: 33,
+// };
+// // Change code below this line
+// const { yesterday, today, tomorrow} = highTemperatures;
+// // Change code above this line
+// const meanTemperature = (yesterday + today + tomorrow) / 3;
+
+// 22
+// const highTemperatures = {
+//   yesterday: 28,
+//   today: 26,
+//   tomorrow: 33,
+// };
+// // Change code below this line
+
+// const {
+// yesterday,
+// today,
+// tomorrow,
+// icon = "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg"
+// } = highTemperatures;
+
+// // Change code above this line
+// const meanTemperature = (yesterday + today + tomorrow) / 3;
+// console.log(highTemperatures);
+
+// 23
+// Замени объявления переменных highYesterday,
+// highToday, highTomorrow и highIcon одной
+// операцией деструктуризации свойств объекта highTemperatures.Задай
+// значение по умолчанию для highIcon -
+// строку "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg".
+
+// const highTemperatures = {
+//   yesterday: 28,
+//   today: 26,
+//   tomorrow: 33,
+// };
+// // Change code below this line
+
+// const { yesterday: highYesterday,
+//        today: highToday,
+//        tomorrow: highTomorrow,
+//        icon: highIcon = 'https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg',} = highTemperatures;
+
+// // Change code above this line
+// const meanTemperature = (highYesterday + highToday + highTomorrow) / 3;
+// console.log(highTemperatures);
+
+// 24
+// const colors = [
+//   { hex: '#f44336', rgb: '244,67,54' },
+//   { hex: '#2196f3', rgb: '33,150,243' },
+//   { hex: '#4caf50', rgb: '76,175,80' },
+//   { hex: '#ffeb3b', rgb: '255,235,59' },
+// ];
+
+// const hexColors = [];
+// const rgbColors = [];
+// // Change code below this line
+
+// for (const { hex, rgb } of colors) {
+//   hexColors.push(hex);
+//   rgbColors.push(rgb);
+// }
+
+// 25
+const forecast = {
+  today: {
+    low: 28,
+    high: 32,
+    icon: 'https://www.flaticon.com/svg/static/icons/svg/861/861059.svg',
+  },
+  tomorrow: {
+    low: 27,
+    high: 31,
+	icon: "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg"
+  },
+};
+console.log(forecast);
+const {lowToday, highTomorrow} = forecast ;
+const meanTemperature = (lowToday + highTomorrow) / 2;
