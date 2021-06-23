@@ -798,3 +798,80 @@
 
 
 
+
+// function Person(obj) {  
+//   const { firstName, lastName, age, gender, interests } = obj;
+//   this.firstName = firstName;
+//   this.lastName = lastName;
+//   this.age = age;
+//   this.gender = gender;
+//   this.interests = interests;
+// }
+
+// Person.prototype.greeting = function () {
+//   console.log(`Привет я ${this.firstName} ${this.lastName}`);
+// };
+
+// Person.prototype.bio = function () {
+//   console.log(
+//     `Привет ${this.firstName} мне ${this.age} лет. Мне нравится ${this.interests}`
+//   );
+// };
+
+// const user = new Person({
+//   firstName: "Bob",
+//   lastName: "Dou",
+//   age: 21,
+//   gender: "male",
+//   interests: "football",
+// });
+// console.log(Person.prototype);
+
+// const user2 = new Person({
+//   firstName: "Jack",
+//   lastName: "Dou",
+//   age: 35,
+//   gender: "male",
+//   interests: "basketball",
+// });
+
+// let arr = [];
+// console.log(`arr`, arr);
+
+
+
+// function Teacher(obj) {
+//   const { subject } = obj;
+//   // this = {}
+//   Person.call(this, obj);
+//   this.subject = subject;
+// }
+
+// Teacher.prototype = Object.create(Person.prototype);
+// Teacher.prototype.constructor = Teacher;
+
+// Teacher.prototype.greeting = function () {
+//   console.log("I am teacher method");
+// };
+
+// const teacher1 = new Teacher({
+//   firstName: "Bob",
+//   lastName: "Dou",
+//   age: 45,
+//   gender: "male",
+//   interests: "football",
+//   subject: "Math",
+// });
+
+// console.log(`teacher1`, teacher1);
+// teacher1.greeting();
+
+// Задача на співбесіді
+// const a = { };
+// const b = { key:`b` };
+// const c = {key: `c`};
+
+// a[b] = 1;
+// a[c] = 2;
+
+// console.log(a[b]);
