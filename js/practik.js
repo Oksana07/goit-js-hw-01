@@ -386,3 +386,415 @@
 // carts.slice(index, 1);
 // console.log(index);
 
+
+
+// 4модуль конспект
+// const printMessage = function (message) {
+//     console.log(message);
+// };
+
+// const higherOrderFunction = function (callback) {
+//     const string = 'HOCs are awesome';
+//     callback(string);
+// };
+
+// higherOrderFunction(printMessage);
+
+// // 
+// for (let i = 0; i < 10; i += 1) {
+//   console.log(i);
+// }
+
+// const repeatLog = function (n) {
+//   for (let i = 0; i < n; i += 1) {
+//     console.log(i);
+//   }
+// };
+
+// repeatLog(5);
+
+// 
+// const printValue = function (value) {
+//   console.log(value);
+// };
+
+// const prettyPrint = function (value) {
+//   console.log('Logging value: ', value);
+// };
+
+// const repeat = function (n, action) {
+//   for (let i = 0; i < n; i += 1) {
+//     action(i);
+//   }
+// };
+
+// // Передаем printValue как callback-функцию
+// repeat(3, printValue);
+// // 0
+// // 1
+// // 2
+
+// // Передаем prettyPrint как callback-функцию
+// repeat(3, prettyPrint);
+// // Logging value: 0
+// // Logging value: 1
+// // Logging value: 2
+
+// 
+// const repeat = function (n, action) {
+//   for (let i = 0; i < n; i += 1) {
+//     action(i);
+//   }
+// };
+
+// const labels = [];
+
+// repeat(5, value => {
+//   labels.push(`Label ${value + 1}`);
+// });
+
+// console.log(labels); // ["Label 1", "Label 2", "Label 3", "Label 4", "Label 5"]
+
+// 
+// const filter = function (array, test) {
+//   for (const element of array) {
+//     test(element);
+//   }
+// };
+
+
+// const filter = function (array, test) {
+//   const filteredElements = [];
+
+//   for (const element of array) {
+//     const passed = test(element);
+
+//     if (passed) {
+//       filteredElements.push(element);
+//     }
+//   }
+
+//   return filteredElements;
+// };
+
+// const fruits = [
+//   { name: 'apples', quantity: 200, isFresh: true },
+//   { name: 'grapes', quantity: 150, isFresh: false },
+//   { name: 'bananas', quantity: 100, isFresh: true },
+// ];
+
+// const freshFruits = filter(fruits, fruit => fruit.isFresh);
+// console.log(freshFruits); // массив с объектами apples и bananas
+
+// const fruitsWithQuantity = filter(fruits, fruit => fruit.quantity >= 120);
+// console.log(fruitsWithQuantity); 
+
+// 
+// const bar = function () {
+//   console.log('bar');
+// };
+
+// const baz = function () {
+//   console.log('baz');
+// };
+
+// const foo = function () {
+//   console.log('foo');
+//   bar();
+//   baz();
+// };
+
+// foo();
+
+// 
+// const createCounter = function () {
+//   /*
+//    * Локальная переменная privateValue доступна только в замыкании.
+//    * Получить к ней доступ во внешнем коде невозможно.
+//    */
+//   let privateValue = 0;
+
+//   const increment = function () {
+//     privateValue += 1;
+//     console.log(privateValue);
+//   };
+
+//   return {
+//     increment,
+//   };
+// };
+
+// const counterA = createCounter();
+// counterA.increment(); // 1
+// counterA.increment(); // 2
+
+// const counterB = createCounter();
+// counterB.increment(); // 1
+// counterB.increment(); // 2
+// counterB.increment(); // 3
+
+// 
+// const makeDish = function (shefName, dish) {
+//   console.log(`${shefName} is cooking ${dish}`);
+// };
+
+// makeDish('Mango', 'apple pie'); // Mango is cooking apple pie
+// makeDish('Mango', 'fish'); // Mango is cooking fish
+// makeDish('Mango', 'beef stew'); // Mango is cooking beef stew
+
+// makeDish('Poly', 'muffins'); // Poly is cooking muffins
+// makeDish('Poly', 'pork chops'); // Poly is cooking pork chops
+// makeDish('Poly', 'roast beef'); // Poly is cooking roast beef
+
+
+// Петя бежит быстро, потому что Петя пытается поймать поезд.
+// Петя бежит быстро, потому что он (this) пытается поймать поезд.
+// const petya = {
+//   name: 'Petya',
+//   showName() {
+//     console.log(this.name);
+//   },
+// };
+
+// petya.showName();
+
+// function fn() {
+//   console.log(this);
+// }
+
+// fn(); // window без "use strict" и undefined с "use strict"
+
+// 
+// const petya = {
+//   name: 'Petya',
+//   showThis() {
+//     console.log(this);
+//   },
+//   showName() {
+//     console.log(this.name);
+//   },
+// };
+
+// petya.showThis(); // {name: "Petya", showThis: ƒ, showName: ƒ}
+// petya.showName(); // 'Petya'
+
+// 
+// const hotel = {
+//   name: 'Resort hotel',
+//   showThis() {
+//     const fn = () => {
+//       /*
+//        * Стрелки запоминают контекст во время объявления,
+//        * из родительской области видимости
+//        */
+//       console.log('this in fn: ', this);
+//     };
+
+//     fn();
+//     console.log('this in showThis: ', this);
+//   },
+// };
+
+// hotel.showThis();
+// // this in fn: {name: 'Resort hotel', showThis: ƒ}
+// // this in showThis: {name: 'Resort hotel',showThis: ƒ}
+
+// const hotel = {
+//   name: 'Resort hotel',
+//   showThis: function showThis() {
+//     /*
+//      * Контекст для стрелки сохраняется
+//      * и передается из внешней области видимости
+//      */
+//     const context = this;
+
+//     const fn = function fn() {
+//       // А тут используется
+//       console.log('this in fn: ', context);
+//     };
+
+//     fn();
+//     console.log('this in showThis: ', this);
+//   },
+// };
+
+// hotel.showThis();
+// // this in fn: {name: 'Resort hotel', showThis: ƒ}
+// // this in showThis: {name: 'Resort hotel',showThis: ƒ}
+
+
+// const greet = function (guest, stars) {
+//   return `${guest}, welcome to ${stars}-star ${this.name}!`;
+// };
+
+// const hotel = { name: 'Resort Hotel' };
+// const motel = { name: 'Sunlight Motel' };
+
+// console.log(greet.call(hotel, 'Mango', 5));
+
+
+// console.log(greet.call(motel, 'Poly', 4));
+
+// 
+// const greet = function (guest, stars) {
+//   return `${guest}, welcome to ${stars}-star ${this.name}!`;
+// };
+
+// const hotel = { name: 'Resort Hotel' };
+// const motel = { name: 'Sunlight Motel' };
+
+// console.log(greet.apply(hotel, ['Mango', 5]));
+// // "Mango, welcome to 5-star Resort Hotel!"
+
+// console.log(greet.apply(motel, ['Poly', 4]));
+// // "Poly, welcome to 4-star Sunlight Motel!"
+
+// 
+// const greet = function (guest) {
+//   return `${guest}, welcome to ${this.name}!`;
+// };
+
+// const hotel = { name: 'Resort Hotel' };
+
+// const hotelGreeter = greet.bind(hotel, 'Mango');
+
+// hotelGreeter(); // "Mango, welcome to Resort Hotel!"
+
+
+// const hotel = {
+//   name: 'Resort Hotel',
+//   showThis() {
+//     console.log(this);
+//   },
+// };
+// const fn = function (callback) {
+//   callback();
+// };
+
+// // Передаем копию метода showThis с контекстом привязанным к hotel
+// fn(hotel.showThis.bind(hotel)); // {name: "Resort Hotel", showThis: ƒ}
+
+// Напиши функцию countTotalSalary(employees) принимающую объект зарплат. 
+// Функция считает общую сумму запрплаты работников и возращает ее.
+// Каждое поле объекта, передаваемого в функцию, имеет вид "имя": "зарплата".
+
+// const countTotalSalary = function (employees) {
+    
+  // твой код
+// };
+
+/*
+ * Вызовы функции для проверки работоспособности твоей реализации.
+ */
+// console.log(countTotalSalary({})); // 0
+
+// console.log(
+//   countTotalSalary({
+//     mango: 100,
+//     poly: 150,
+//     alfred: 80,
+//   }),
+// ); // 330
+
+// console.log(
+//   countTotalSalary({
+//     kiwi: 200,
+//     lux: 50,
+//     chelsy: 150,
+//   }),
+// ); // 400
+    
+    // Напиши функцию findBestEmployee(employees), которая
+    // принимает объект сотрудников и возвращает имя самого
+    // продуктивного(который выполнил больше всех задач).
+    // Сотрудники и кол - во выполненых задач содержатся как свойства 
+    // объекта в формате "имя": "кол-во задач".
+
+//     const findBestEmployee = function (employees) {
+//         const value = Object.values(employees);
+//         const max = Math.max(...values);
+
+// };
+
+// /*
+//  * Вызовы функции для проверки работоспособности твоей реализации.
+//  */
+// console.log(
+//   findBestEmployee({
+//     ann: 29,
+//     david: 35,
+//     helen: 1,
+//     lorence: 99,
+//   }),
+// ); // lorence
+
+// console.log(
+//   findBestEmployee({
+//     poly: 12,
+//     mango: 17,
+//     ajax: 4,
+//   }),
+// ); // mango
+
+// console.log(
+//   findBestEmployee({
+//     lux: 147,
+//     david: 21,
+//     kiwi: 19,
+//     chelsy: 38,
+//   }),
+// ); // lux
+
+// Напиши функцию getAllPropValues(arr, prop),
+// которая получает массив объектов и имя свойства.
+// Возвращает массив значений определенного свойства prop из каждого
+// объекта в массиве.
+
+// const products = [
+//   { name: 'Радар', price: 1300, quantity: 4 },
+//   { name: 'Сканер', price: 2700, quantity: 3 },
+//   { name: 'Дроид', price: 400, quantity: 7 },
+//   { name: 'Захват', price: 1200, quantity: 2 },
+// ];
+
+// const getAllPropValues = function (arr, prop) {
+    
+        
+//     }
+//   // твой код
+// };
+
+// /*
+//  * Вызовы функции для проверки работоспособности твоей реализации.
+//  */
+// console.log(getAllPropValues(products, 'name')); // ['Радар', 'Сканер', 'Дроид', 'Захват']
+
+// console.log(getAllPropValues(products, 'quantity')); // [4, 3, 7, 2]
+
+// console.log(getAllPropValues(products, 'category')); // []
+
+// 
+// onst products = [
+//   { name: 'Радар', price: 1300, quantity: 4 },
+//   { name: 'Сканер', price: 2700, quantity: 3 },
+//   { name: 'Дроид', price: 400, quantity: 7 },
+//   { name: 'Захват', price: 1200, quantity: 2 },
+// ];
+
+// const calculateTotalPrice = function (allProdcuts, productName) {
+    
+//   // твой код
+// };
+
+// /*
+//  * Вызовы функции для проверки работоспособности твоей реализации.
+//  */
+// console.log(calculateTotalPrice(products, 'Радар')); // 5200
+
+// console.log(calculateTotalPrice(products, 'Дроид')); // 2800
+
+// 
+// Исправь ошибки которые будут в консоли, чтобы скрипт заработал.
+
+
+

@@ -293,18 +293,142 @@
 // }
 
 // 25
-const forecast = {
-  today: {
-    low: 28,
-    high: 32,
-    icon: 'https://www.flaticon.com/svg/static/icons/svg/861/861059.svg',
-  },
-  tomorrow: {
-    low: 27,
-    high: 31,
-	icon: "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg"
-  },
-};
-console.log(forecast);
-const {lowToday, highTomorrow} = forecast ;
-const meanTemperature = (lowToday + highTomorrow) / 2;
+// const forecast = {
+//   today: {
+//     low: 28,
+//     high: 32,
+//     icon: 'https://www.flaticon.com/svg/static/icons/svg/861/861059.svg',
+//   },
+//   tomorrow: {
+//     low: 27,
+//     high: 31,
+// 	icon: "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg"
+//   },
+// };
+// console.log(forecast);
+// const {lowToday, highTomorrow} = forecast ;
+// const meanTemperature = (lowToday + highTomorrow) / 2;
+
+// 26
+
+// function calculateMeanTemperature(forecast) {
+//   const {
+//     today: { low: todayLow, high: todayHigh },
+//     tomorrow: {low: tomorrowLow, high:tomorrowHigh },
+//   } = forecast;
+
+//   return (todayLow + todayHigh + tomorrowLow + tomorrowHigh) / 4;
+// }
+
+// console.log(
+//   calculateMeanTemperature({
+//     today: { low: 28, high: 32 },
+//     tomorrow: { low: 25, high: 29 },
+//   })
+// );
+
+// 27
+// const scores = [89, 64, 42, 17, 93, 51, 26];
+// // Change code below this line
+// const bestScore = Math.max(...scores);
+// const worstScore = Math.min(...scores);
+
+// console.log(Math.max(...scores));
+// console.log(Math.min(...scores));
+
+// 28
+// const firstGroupScores = [64, 42, 93];
+// const secondGroupScores = [89, 14, 51, 26];
+// const thirdGroupScores = [29, 47, 18, 97, 81];
+// // Change code below this line
+// const allScores = [...firstGroupScores, ... secondGroupScores, ...thirdGroupScores];
+// const bestScore = Math.max(...allScores);
+// const worstScore = Math.min(...allScores);
+
+// 29
+// const defaultSettings = {
+//   theme: 'light',
+//   public: true,
+//   withPassword: false,
+//   minNumberOfQuestions: 10,
+//   timePerQuestion: 60,
+// };
+// const overrideSettings = {
+//   public: false,
+//   withPassword: true,
+//   timePerQuestion: 30,
+// };
+// // Change code below this line
+// const finalSettings = {...defaultSettings, ...overrideSettings};
+
+// 30
+// function makeTask(data) {
+//   const completed = false;
+//   const category = 'General';
+//   const priority = 'Normal';
+//   // Change code below this line
+// const task = {completed, category, priority }
+// const editeData = {...task, ...data}
+// return {category, priority, completed, ...data};
+//   // Change code above this line
+// }
+
+// 31
+
+// 32
+// function addOverNum(...args) {
+//   let total = 0;
+//   for (const arg of args) {
+//     if(arg > args[0]) {
+//     total += arg;
+//     }
+//   }
+//   return total;
+//   // Change code above this line
+// }
+
+// // 33
+// // Change code below this line
+// function findMatches(arr, ...args) {
+//  const matches = [];
+//  for (let element of args){
+//   if (arr.includes(element))
+//     matches.push(element)
+//  }
+//  return matches;
+// }
+
+// 41
+// const atTheOldToad = {
+//   potions: [
+//     { name: 'Speed potion', price: 460 },
+//     { name: 'Dragon breath', price: 780 },
+//     { name: 'Stone skin', price: 520 },
+//   ],
+//   // Change code below this line
+//   getPotions() {
+//     return this.potions;
+//   },
+//   addPotion(potionName) {
+//     if (this.potions.includes(potionName)) {
+//       return Potion
+//     }
+
+//     this.potions.push(potionName);
+//   },
+//   removePotion(potionName) {
+//     for(let i=0; i < this.potions.length; i += 1) {
+//         if(this.potions[i].name === potionName) {
+//             this.potions.splice(i, 1)
+//         }
+//     }
+//   },
+//  updatePotionName(oldName, newName) {
+//     for(let obj of this.potions) {
+//         if(obj.name === oldName) {
+//             obj.name = newName
+//         }
+//     }
+//   },
+//   // Change code above this line
+// };
