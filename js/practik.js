@@ -866,6 +866,7 @@
 // console.log(`teacher1`, teacher1);
 // teacher1.greeting();
 
+// 4 модуль
 // Задача на співбесіді
 // const a = { };
 // const b = { key:`b` };
@@ -875,3 +876,311 @@
 // a[c] = 2;
 
 // console.log(a[b]);
+
+// function some(arr, callbec) {
+//   for (let element of arr) {
+//     let result = callbec(element);
+//     if (result === true) {
+//   result true;
+//     }
+//      }
+//     result false;
+// }
+// const nambers = [1, 3, 5, 7, 9, 10];
+
+// function checNumber(number) {
+//   if (number % 2 === 0) {
+//     return true;
+//   }
+//   return false;
+// }
+
+// const array = [`1`, `2`, `3`];
+// array.forEach(Element => console.log(Element));,буде - 1, 2 , 3
+
+
+// const array = [1, 4, 9, 16];
+// const map = array.map(x => x * 2);
+// console.log(map); перемножує нп два. вертає нову колекцію
+
+// const array = [5, 12, 8, 130, 44];
+// const found = array.find(element => element > 10);
+// console.log(found);верене перше унікальне число 12 переше найдельше від 10,  верене 12.
+
+
+// дз 6 модуля 1 заняття
+
+const scientists = [
+  {
+    name: "Albert",
+    surname: "Einstein",
+    born: 1879,
+    dead: 1955,
+    id: 1,
+  },
+  {
+    name: "Isaac",
+    surname: "Newton",
+    born: 1643,
+    dead: 1727,
+    id: 2,
+  },
+  {
+    name: "Galileo",
+    surname: "Galilei",
+    born: 1564,
+    dead: 1642,
+    id: 3,
+  },
+  {
+    name: "Marie",
+    surname: "Curie",
+    born: 1867,
+    dead: 1934,
+    id: 4,
+  },
+  {
+    name: "Johannes",
+    surname: "Kepler",
+    born: 1571,
+    dead: 1630,
+    id: 5,
+  },
+  {
+    name: "Nicolaus",
+    surname: "Copernicus",
+    born: 1473,
+    dead: 1543,
+    id: 6,
+  },
+  {
+    name: "Max",
+    surname: "Planck",
+    born: 1858,
+    dead: 1947,
+    id: 7,
+  },
+  {
+    name: "Katherine",
+    surname: "Blodgett",
+    born: 1898,
+    dead: 1979,
+    id: 8,
+  },
+  {
+    name: "Ada",
+    surname: "Lovelace",
+    born: 1815,
+    dead: 1852,
+    id: 9,
+  },
+
+  {
+    name: "Lise",
+    surname: "Meitner",
+    born: 1878,
+    dead: 1968,
+    id: 11,
+  },
+  {
+    name: "Sarah E.",
+    surname: "Goode",
+    born: 1855,
+    dead: 1905,
+    id: 10,
+  },
+  {
+    name: "Hanna",
+    surname: "Hammarström",
+    born: 1829,
+    dead: 1909,
+    id: 12,
+  },
+];
+
+// задача
+//1 Найти год рождения Albert Einstein
+// Розвязок
+
+// 1// можна функцією написати
+// const findDataOfBirth = (name, lastName, arr) => {
+//   const result = arr.find(
+//     (scientists) => scientists.name === name && scientists.surname === lastName);
+//   // return result ? result.born: 'Такой юзер не найден';\
+//   // або
+//   return result?.born ?? 'Такой юзер не найден';
+// };
+// console.log(findDataOfBirth('Albert', 'Einstein', scientists));
+
+
+// 2
+// const findDataOfBirth = (name, lastName, arr) => 
+//  arr.find(
+//     (scientists) => scientists.name === name && scientists.surname === lastName).born;
+
+// console.log(findDataOfBirth('Albert', 'Einstein', scientists));
+
+// 3
+// const found = scientists.find((scientists) => scientists.name === 'Albert' && scientists.surname === 'Einstein');
+
+// console.log(found.born);
+
+// задачв
+// 2 Узнать все ли ученые работала в 19 ст
+
+// const result = scientists.every(
+//   (scientists) =>
+//     scientists.born >= 1800 && scientists.born && scientists.born > 1900);
+// console.log(`result`, result);
+
+// Модуль 6 ІІ заняття
+
+//  Сортировка примитивов
+// Выполнить сортировку массива цен по убыванию и возрастанию.
+
+// const prices = [2, 14, 1, 37, 26, 8];
+// const pricesInAscendingOrder = [...prices].sort((a, b) => a - b);
+// const pricesInDescendingOrder = [...prices].sort((a, b) => b - a);
+
+// console.log(`pricesInAscendingOrder`, pricesInAscendingOrder);
+// console.log(`pricesInDescendingOrder`, pricesInDescendingOrder);
+
+// // console.log(`arr`, [...prices]);
+
+// Выполнить сортировку массива названий мониторов в алфавитном и обратном алфавитном порядке.
+
+// const items = ["SAMSUNG", "LG", "ASUS", "DELL", "BENQ"];
+// const itemsInAlphabeticalOrder = [...items].sort((a, b) => (a > b ? 1 : -1));
+// const itemsInDescAlphabeticalOrder = [...items].sort((a, b) =>
+//   a > b ? -1 : 1
+// );
+
+// console.log(`itemsInAlphabeticalOrder`, itemsInAlphabeticalOrder);
+// console.log(`itemsInDescAlphabeticalOrder`, itemsInDescAlphabeticalOrder);
+
+
+// Собрать в allTopics массив всех предметов всех курсов используя flatMap.
+// Используя Array.prototype.filter выполнить фильтрацию, оставив в uniqueTopics только уникальные элементы.
+// const courses = [
+//   {
+//     name: "Basic HTML+CSS",
+//     topics: ["VSCode", "HTML", "CSS", "GitHub Desktop", "GitHub"],
+//   },
+//   {
+//     name: "Intermediate HTML+CSS",
+//     topics: ["VSCode", "Terminal", "Git", "GitHub", "HTML", "CSS"],
+//   },
+//   {
+//     name: "Basic JavaScript",
+//     topics: [
+//       "VSCode",
+//       "Type system",
+//       "Loops",
+//       "Functions",
+//       "Conditions",
+//       "Classes",
+//       "DOM",
+//       "Git",
+//       "GitHub",
+//     ],
+//   },
+//   {
+//     name: "Intermediate JavaScript",
+//     topics: [
+//       "VSCode",
+//       "NPM",
+//       "Bundlers",
+//       "Transpiling",
+//       "Promises",
+//       "AJAX",
+//       "Git",
+//       "GitHub",
+//     ],
+//   },
+// ];
+
+// const allTopics = courses.flatMap((course) => course.topics);
+// console.log(`allTopics`, allTopics);
+// const uniqueTopics = allTopics.filter(
+//   (topic, index, arr) => arr.indexOf(topic) === index
+// );
+// console.log(`uniqueTopics`, uniqueTopics);
+
+
+// async function getData() {
+//   let result = null;
+//   let response = await fetch("https://restcountries.eu/rest/v2/all");
+//   result = await response.json();
+//   return result;
+// }
+
+// // getData().then((data) => localStorage.setItem("arr", JSON.stringify(data)));
+
+// const arr = JSON.parse(localStorage.getItem("arr"));
+// console.log(arr);
+
+// // Получить стрыны из региона Europe
+// // Получить название самой большой страни в Европе
+// // Получить название самой маленькой страни в Европе
+// // Получить список стран с которыми граничит Швейцария (Switzerland)
+// // Получить процент который занимает  Австрия  в мире
+
+// const REGIONS = {
+//   EUROPE: "Europe",
+//   ASIA: "Asia",
+// };
+
+// const findCountryByRegion = (countries, region) =>
+//   countries.filter((country) => country.region === region);
+// // .map((country) => country.name);
+
+// const countriesInEurope = findCountryByRegion(arr, REGIONS.EUROPE);
+
+// const findLargestAndSmallestCountries = (countries) => {
+//   const sortedCouytriesList = [...countries].sort((a, b) => b.area - a.area);
+//   return {
+//     max: sortedCouytriesList[0],
+//     min: sortedCouytriesList[sortedCouytriesList.length - 1],
+//   };
+// };
+
+// console.log(`result `, findCountryByRegion(arr, REGIONS.EUROPE));
+// console.log(
+//   "min and max countries",
+//   findLargestAndSmallestCountries(countriesInEurope)
+// );
+
+// const findCountryByName = (contryName, countries) =>
+//   countries.find((country) => country.name === contryName);
+
+// const borders = findCountryByName("Switzerland", arr).borders;
+
+// const bordersCountries = (countries, borders) =>
+//   countries
+//     .filter((country) => borders.includes(country.alpha3Code))
+//     .map((country) => country.name);
+
+// console.log(`bordersCountries`, bordersCountries(countriesInEurope, borders));
+// // function findBorders(countryName, countryArray) {
+// //   const countryCode = countryArray.find(
+// //     (el) => el.name === countryName
+// //   ).alpha3Code;
+// //   console.log(countryCode);
+// //   const result = countryArray
+// //     .filter((el) => el.borders.includes(countryCode))
+// //     .map((el) => el.name);
+// //   return result;
+// // }
+
+// // console.log(findBorders("Switzerland", arr));
+
+// for (let i = 0; i < 6; i++) { //! Эту строку можно изменить
+//  for (let j = 0; j < 5; j ++) {
+//    if (i === 5 && j === 5) {
+//      //! Эту строку можно изменить
+//    }
+ 
+//    console.log(i, j);
+//  }
+// }
+
